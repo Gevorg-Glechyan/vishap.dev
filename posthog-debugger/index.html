@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" style="--accent: #2447B8; --accent-label: #FFFFFF">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PostHog Debugger (Unofficial) · vishap</title>
+  <meta name="description" content="Shows PostHog events in DevTools as a page sends them.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
+  <link rel="icon" href="../brand/project/assets/Product-icons/posthog-debugger.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <a class="logo" href="../" aria-label="vishap, home">
+        <picture>
+          <source srcset="../brand/project/assets/Logos/vishap-wordmark-wool.svg" media="(prefers-color-scheme: dark)">
+          <img src="../brand/project/assets/Logos/vishap-wordmark.svg" alt="vishap" width="126" height="22">
+        </picture>
+      </a>
+      <a href="../#tools">All tools</a>
+    </nav>
+
+    <header class="product-hero">
+      <div>
+        <img class="icon" src="../brand/project/assets/Product-icons/posthog-debugger.svg" alt="" width="64" height="64">
+        <h1>PostHog Debugger (Unofficial)</h1>
+        <p class="lead">Shows PostHog events in DevTools as a page sends them.</p>
+        <div class="actions">
+          <a class="btn" href="https://chromewebstore.google.com/detail/posthog-debugger-unoffici/plleaelmjcemocibhcgdcganbiebdpfj">Add to Chrome</a>
+          <a class="btn secondary" href="#features">See what it does</a>
+        </div>
+        <p class="mono">v1.8.1 · Chrome extension · by vishap</p>
+        <p class="small" style="margin-top: var(--space-4)">Not affiliated with, endorsed by, or sponsored by PostHog.</p>
+      </div>
+      <img class="picture" src="../brand/project/assets/Illustrations/product-posthog-debugger.svg" alt="" width="320" height="320">
+    </header>
+
+    <div class="shot"><img src="screenshot.png" alt="The Events tab of PostHog Debugger in DevTools" width="1280" height="800"></div>
+
+    <main>
+      <section class="section" id="features">
+        <h2>What it does</h2>
+        <div class="points plain">
+          <div class="point"><h3>Live events</h3><p class="small">See every event the moment it fires, with its decoded payload and properties.</p></div>
+          <div class="point"><h3>Config and identity</h3><p class="small">Check the SDK version, token, hosts, consent state, distinct ID and feature flags.</p></div>
+          <div class="point"><h3>Network delivery</h3><p class="small">List every request to PostHog with status, size and timing. Blocked and failed requests stand out.</p></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Details</h2>
+        <dl class="specs">
+          <div><dt class="label">Platform</dt><dd>Chrome extension</dd></div>
+          <div><dt class="label">Version</dt><dd>1.8.1</dd></div>
+          <div><dt class="label">Privacy</dt><dd><a href="https://glechyan.com/extensions/posthog-debugger/privacy-policy/">Privacy policy</a></dd></div>
+        </dl>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <picture>
+        <source srcset="../brand/project/assets/Logos/vishap-wordmark-wool.svg" media="(prefers-color-scheme: dark)">
+        <img src="../brand/project/assets/Logos/vishap-signature.svg" alt="by vishap" width="90" height="18">
+      </picture>
+      <span class="small">© 2026 vishap.dev</span>
+    </footer>
+  </div>
+</body>
+</html>
