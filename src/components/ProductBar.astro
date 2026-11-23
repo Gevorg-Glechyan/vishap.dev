@@ -1,0 +1,20 @@
+---
+// Sticky bar under the site header: the product's name, its section links and the install button.
+interface Props {
+  name: string;
+  icon: string;
+  home: string;
+  store: string;
+  links: { label: string; href: string }[];
+}
+const { name, icon, home, store, links } = Astro.props;
+---
+<div class="product-bar">
+  <div class="wrap">
+    <a class="name" href={home}><img src={icon} alt="" width="24" height="24" />{name}</a>
+    <nav aria-label={name}>
+      {links.map((l) => <a href={l.href}>{l.label}</a>)}
+    </nav>
+    <a class="btn" href={store}>Add to Chrome</a>
+  </div>
+</div>

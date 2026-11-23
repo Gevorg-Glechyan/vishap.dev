@@ -1,0 +1,26 @@
+---
+import wordmark from '@brand/Logos/vishap-wordmark.svg?url';
+import wordmarkWool from '@brand/Logos/vishap-wordmark-wool.svg?url';
+import { tools } from '../data/tools';
+---
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <picture>
+          <source srcset={wordmarkWool} media="(prefers-color-scheme: dark)" />
+          <img src={wordmark} alt="vishap" width="115" height="20" />
+        </picture>
+        <p class="small">Small tools that do one job well.</p>
+      </div>
+      <div>
+        <p class="label">Tools</p>
+        <ul class="small">
+          {tools.map((t) => <li><a href={`/${t.slug}/`}>{t.name}</a></li>)}
+        </ul>
+      </div>
+      <slot />
+    </div>
+    <p class="small legal">A vishap is the dragon of Armenian myth. © 2026 vishap.dev</p>
+  </div>
+</footer>

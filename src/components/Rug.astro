@@ -1,0 +1,9 @@
+---
+// A product capture on a carpet field: flat color, one wool border line, four ochre diamonds.
+interface Props { field?: 'indigo' | 'teal' | 'madder'; caption?: string; class?: string }
+const { field = 'indigo', caption, class: extra = '' } = Astro.props;
+---
+<figure class:list={['rug', field !== 'indigo' && field, extra]}>
+  <slot />
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

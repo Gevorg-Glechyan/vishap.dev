@@ -1,0 +1,20 @@
+---
+import SimpleProduct from '../../components/SimpleProduct.astro';
+import shot from '../../assets/window-resize-manager/screenshot.png';
+---
+<SimpleProduct
+  slug="window-resize-manager"
+  name="Window Resize Manager"
+  line="Sets any Chrome window to an exact size."
+  accent="product-violet"
+  version="1.1.2"
+  store="https://chromewebstore.google.com/detail/window-size-manager/jghlnkjcenomiebnodjgnpgelbfmnhjg"
+  privacy="https://glechyan.com/extensions/window-size/privacy-policy/"
+  shot={shot}
+  shotAlt="The presets list of Window Resize Manager"
+  features={[
+    { title: 'Presets', text: 'Apply a built-in device size, or one you saved, from the toolbar popup.' },
+    { title: 'Exact sizes', text: 'Type a width and a height, such as 1280 × 800, and resize the window or the viewport to match.' },
+    { title: 'Live dimensions', text: 'See the window frame and viewport dimensions while you resize.' },
+  ]}
+/>

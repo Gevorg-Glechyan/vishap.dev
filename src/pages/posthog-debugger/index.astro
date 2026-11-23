@@ -1,0 +1,21 @@
+---
+import SimpleProduct from '../../components/SimpleProduct.astro';
+import shot from '../../assets/posthog-debugger/screenshot.png';
+---
+<SimpleProduct
+  slug="posthog-debugger"
+  name="PostHog Debugger (Unofficial)"
+  line="Shows PostHog events in DevTools as a page sends them."
+  accent="product-cobalt"
+  version="1.8.1"
+  store="https://chromewebstore.google.com/detail/posthog-debugger-unoffici/plleaelmjcemocibhcgdcganbiebdpfj"
+  privacy="https://glechyan.com/extensions/posthog-debugger/privacy-policy/"
+  note="Not affiliated with, endorsed by, or sponsored by PostHog."
+  shot={shot}
+  shotAlt="The Events tab of PostHog Debugger in DevTools"
+  features={[
+    { title: 'Live events', text: 'See every event the moment it fires, with its decoded payload and properties.' },
+    { title: 'Config and identity', text: 'Check the SDK version, token, hosts, consent state, distinct ID and feature flags.' },
+    { title: 'Network delivery', text: 'List every request to PostHog with status, size and timing. Blocked and failed requests stand out.' },
+  ]}
+/>
