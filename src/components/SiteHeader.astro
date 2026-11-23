@@ -1,0 +1,15 @@
+---
+import wordmark from '@brand/Logos/vishap-wordmark.svg?url';
+import wordmarkWool from '@brand/Logos/vishap-wordmark-wool.svg?url';
+---
+<div class="wrap">
+  <nav class="nav" aria-label="Site">
+    <a class="logo" href="/" aria-label="vishap, home">
+      <picture>
+        <source srcset={wordmarkWool} media="(prefers-color-scheme: dark)" />
+        <img src={wordmark} alt="vishap" width="126" height="22" />
+      </picture>
+    </a>
+    <a href="/#tools">Tools</a>
+  </nav>
+</div>

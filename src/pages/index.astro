@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+import { tools } from '../data/tools';
+import { productIcon, illustration } from '../data/brand';
+
+const principles = [
+  { art: 'one-job', title: 'One job per tool', text: 'A tool is finished when it does its job well. Then it stays small.' },
+  { art: 'nothing-hidden', title: 'A clear price', text: 'The price is clear before you pay. No hidden charges.' },
+  { art: 'kept-inside', title: 'Your data is not for sale', text: 'vishap never sells your data.' },
+];
+---
+<Base
+  title="vishap: small tools that do one job well"
+  description="vishap makes small, single-purpose tools for the browser. Each one fixes one specific annoyance."
+>
+  <div class="wrap">
+    <header class="hero">
+      <h1 class="display" style="max-width: 14ch">Small tools that do one job well.</h1>
+      <p class="lead">vishap makes single-purpose tools for the browser. Each one fixes one small, specific annoyance.</p>
+    </header>
+    <img class="picture" src={illustration['hero-dragons']} alt="Two dragons guard a star, drawn in the manner of an Armenian dragon carpet" width="960" height="400" />
+
+    <main>
+      <section class="section" id="tools">
+        <p class="label">Browser tools</p>
+        <div class="cards">
+          {tools.map((t) => (
+            <a class="card" href={`/${t.slug}/`}>
+              <img src={productIcon[t.slug]} alt="" width="48" height="48" />
+              <h3>{t.name}</h3>
+              <p class="small">{t.line}</p>
+              <span class="tag label">Chrome</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>How vishap works</h2>
+        <div class="points">
+          {principles.map((p) => (
+            <div class="point">
+              <img class="picture" src={illustration[p.art]} alt="" width="320" height="320" />
+              <h3>{p.title}</h3>
+              <p class="small">{p.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
+  </div>
+</Base>

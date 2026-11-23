@@ -1,0 +1,10 @@
+---
+// A product capture on a carpet field: flat color, one wool border line, four ochre diamonds.
+// The field is indigo, or madder for a closing band. Product colors are not used as fields (brand book).
+interface Props { field?: 'indigo' | 'madder'; caption?: string; class?: string }
+const { field = 'indigo', caption, class: extra = '' } = Astro.props;
+---
+<figure class:list={['rug', field !== 'indigo' && field, extra]}>
+  <slot />
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

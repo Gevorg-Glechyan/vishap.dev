@@ -1,0 +1,61 @@
+---
+import '@fontsource-variable/schibsted-grotesk';
+import '@fontsource/jetbrains-mono/500.css';
+import '../styles/global.css';
+import tokens from '../../brand/project/tokens.json';
+import SiteHeader from '../components/SiteHeader.astro';
+import Footer from '../components/Footer.astro';
+import siteFavicon from '@brand/Logos/vishap-favicon.svg?url';
+
+interface Props {
+  title: string;
+  description: string;
+  /** A product page passes its color token name, e.g. "product-teal". */
+  accent?: string;
+  /** Darker or lighter accent for text links: a readable color in both themes. */
+  accentText?: { light: string; dark: string };
+  icon?: string;
+}
+const { title, description, accent, accentText, icon = siteFavicon } = Astro.props;
+
+// Brand tokens are the single source: emit them as CSS variables for both themes.
+type Themed = string | { light: string; dark?: string };
+const first = (v: Themed) => (typeof v === 'string' ? v : v.light);
+const dark = (v: Themed) => (typeof v === 'string' ? null : (v.dark ?? null));
+const light = [
+  ...tokens.color.tokens.map((t) => `--${t.name}:${first(t.value)}`),
+  ...tokens.spacing.tokens.map((t) => `--${t.name}:${t.value}`),
+  ...tokens.radius.tokens.map((t) => `--${t.name}:${t.value}`),
+];
+const darker = tokens.color.tokens.filter((t) => dark(t.value)).map((t) => `--${t.name}:${dark(t.value)}`);
+const page = accent
+  ? [`--accent:var(--${accent})`, '--accent-label:var(--on-product)', accentText ? `--accent-text:${accentText.light}` : '']
+  : [];
+const pageDark = accentText ? [`--accent-text:${accentText.dark}`] : [];
+const css =
+  `:root{${[...light, ...page].filter(Boolean).join(';')}}` +
+  `@media (prefers-color-scheme: dark){:root{${[...darker, ...pageDark].join(';')}}}`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="icon" href={icon} type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+    <meta name="twitter:card" content="summary" />
+    <style is:inline set:html={css}></style>
+  </head>
+  <body>
+    <SiteHeader />
+    <slot name="bar" />
+    <slot />
+    <Footer />
+  </body>
+</html>
