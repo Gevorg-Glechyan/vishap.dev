@@ -11,7 +11,7 @@ const { name, icon, home, store, links } = Astro.props;
 ---
 <div class="product-bar">
   <div class="wrap">
-    <a class="name" href={home}><img src={icon} alt="" width="24" height="24" />{name}</a>
+    <a class="name" href={home}><img src={icon} alt="" width="24" height="24" /><span>{name}</span></a>
     <nav aria-label={name}>
       {links.map((l) => <a href={l.href}>{l.label}</a>)}
     </nav>

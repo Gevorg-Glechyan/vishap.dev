@@ -44,13 +44,14 @@ h3 { font-size: 1.1875rem; line-height: 1.35; font-weight: 700; }
 .logo img { height: 22px; width: auto; }
 
 .product-bar { position: sticky; top: 0; z-index: 5; background: var(--ground); border-block: 1px solid var(--line); }
-.product-bar .wrap { display: flex; align-items: center; gap: var(--space-6); height: 56px; font-size: 0.9375rem; }
-.product-bar .name { display: inline-flex; align-items: center; gap: var(--space-2); font-weight: 700; color: var(--ink); text-decoration: none; white-space: nowrap; }
-.product-bar .name img { width: 24px; height: 24px; }
+.product-bar .wrap { display: flex; align-items: center; gap: var(--space-4); height: 56px; font-size: 0.9375rem; }
+.product-bar .name { display: inline-flex; align-items: center; gap: var(--space-2); min-width: 0; font-weight: 700; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.product-bar .name span { overflow: hidden; text-overflow: ellipsis; }
+.product-bar .name img { flex: none; width: 24px; height: 24px; }
 .product-bar nav { display: none; gap: var(--space-6); margin-left: auto; }
 .product-bar nav a { color: var(--ink-muted); text-decoration: none; }
 .product-bar nav a:hover { color: var(--ink); }
-.product-bar .btn { margin-left: auto; height: 34px; }
+.product-bar .btn { flex: none; margin-left: auto; height: 34px; }
 @media (min-width: 860px) { .product-bar nav { display: flex; } .product-bar .btn { margin-left: 0; } }
 
 .footer { margin-top: var(--section); border-top: 1px solid var(--line); padding: var(--space-12) 0; }
@@ -73,7 +74,7 @@ h3 { font-size: 1.1875rem; line-height: 1.35; font-weight: 700; }
 
 /* ---------- Sections and grids ---------- */
 .hero { padding: clamp(40px, 7vw, 88px) 0 var(--space-12); }
-.section { padding: var(--section) 0 0; }
+.section { padding-top: var(--section); }
 .section > .label, .section > h2 { margin-bottom: var(--space-6); }
 .section-head { margin-bottom: clamp(32px, 5vw, 56px); }
 .picture { border-radius: var(--radius-md); width: 100%; }
@@ -114,7 +115,7 @@ h3 { font-size: 1.1875rem; line-height: 1.35; font-weight: 700; }
 
 /* Hero composition: the editor, with the popup overlapping its corner */
 .stage { position: relative; }
-.stage .inset { position: absolute; right: -4%; bottom: -10%; width: 30%; border-radius: 10px; overflow: hidden; outline: 6px solid var(--field); background: #FFFFFF; }
+.stage .inset { position: absolute; right: -4%; bottom: -6%; width: 30%; border-radius: 10px; overflow: hidden; outline: 6px solid var(--field); background: #FFFFFF; }
 @media (max-width: 640px) { .stage .inset { display: none; } }
 /* Capture composition: the popup beside a tall strip of the captured page */
 .duo { display: grid; grid-template-columns: 5fr 4fr; gap: clamp(12px, 2.5vw, 28px); align-items: start; }
@@ -147,7 +148,7 @@ a.card:hover { border-color: var(--line-strong); }
 .plan.featured { border: 2px solid var(--accent, var(--ink)); }
 .price { margin-top: var(--space-4); font-size: 2.75rem; line-height: 1; font-weight: 800; letter-spacing: -0.03em; }
 .price small { font-size: 1rem; font-weight: 500; letter-spacing: 0; color: var(--ink-muted); }
-.plan .diamonds { flex: 1; }
+.plan .diamonds { flex: 1; align-content: start; }
 .plan .actions { margin-top: var(--space-8); }
 
 .table-wrap { overflow-x: auto; margin-top: var(--space-8); border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
