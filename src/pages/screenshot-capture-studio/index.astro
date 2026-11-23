@@ -6,7 +6,7 @@ import Rug from '../../components/Rug.astro';
 import { productIcon, logo } from '../../data/brand';
 import * as p from '../../data/screenshot';
 
-import editorAnnotated from '../../assets/screenshot-capture-studio/editor-annotated.png';
+import editorFullPage from '../../assets/screenshot-capture-studio/editor-full-page.png';
 import popup from '../../assets/screenshot-capture-studio/popup.png';
 import samplePage from '../../assets/screenshot-capture-studio/sample-page-full.png';
 import editor from '../../assets/screenshot-capture-studio/editor.png';
@@ -14,6 +14,8 @@ import exportMenu from '../../assets/screenshot-capture-studio/export.png';
 import history from '../../assets/screenshot-capture-studio/history.png';
 
 const icon = productIcon[p.slug];
+// Captures are taken at double resolution. Offer widths up to the source so high-density screens get every pixel.
+const q = 90;
 const wide = '(min-width: 1296px) 700px, (min-width: 900px) 58vw, 100vw';
 const half = '(min-width: 1296px) 580px, (min-width: 800px) 48vw, 100vw';
 const freeFeatures = p.features.filter((f) => f.free);
@@ -58,8 +60,8 @@ const premiumFeatures = p.features.filter((f) => !f.free);
 
       <Rug>
         <div class="stage">
-          <span class="frame"><Image src={editorAnnotated} alt="The editor with a captured page marked up with arrows, a rectangle, an ellipse and text notes" widths={[640, 925]} sizes="(min-width: 1296px) 1070px, 90vw" loading="eager" /></span>
-          <span class="inset"><Image src={popup} alt="The toolbar popup listing the capture modes: visible area, selected area, HTML element, full page and bulk capture" widths={[240, 390]} sizes="320px" loading="eager" /></span>
+          <span class="frame"><Image src={editorFullPage} alt="The editor showing a whole web page captured from top to bottom as one image" widths={[800, 1280, 1920, 2560]} sizes="(min-width: 1296px) 1070px, 90vw" quality={q} loading="eager" /></span>
+          <span class="inset"><Image src={popup} alt="The toolbar popup listing the capture modes: visible area, selected area, HTML element, full page and bulk capture" widths={[390, 780]} sizes="320px" quality={q} loading="eager" /></span>
         </div>
       </Rug>
 
@@ -82,8 +84,8 @@ const premiumFeatures = p.features.filter((f) => !f.free);
         </div>
         <Rug field="teal" caption="The toolbar popup, and a full page captured as one image. Fictional sample content.">
           <div class="duo">
-            <span class="frame"><Image src={popup} alt="The toolbar popup with its capture modes" widths={[300, 390]} sizes="(min-width: 900px) 300px, 50vw" /></span>
-            <span class="frame tall"><Image src={samplePage} alt="A long sample page captured from top to bottom as a single image" widths={[320, 640]} sizes="(min-width: 900px) 240px, 40vw" /></span>
+            <span class="frame"><Image src={popup} alt="The toolbar popup with its capture modes" widths={[390, 780]} sizes="(min-width: 900px) 300px, 50vw" quality={q} /></span>
+            <span class="frame tall"><Image src={samplePage} alt="A long sample page captured from top to bottom as a single image" widths={[480, 960]} sizes="(min-width: 900px) 240px, 40vw" quality={q} /></span>
           </div>
         </Rug>
       </div>
@@ -101,8 +103,8 @@ const premiumFeatures = p.features.filter((f) => !f.free);
           </div>
           <p class="small" style="margin-top: var(--space-6)">Blur hides detail on screen. It is not a guarantee of secure redaction.</p>
         </div>
-        <Rug caption="An arrow, a text note and a blurred value on a captured area.">
-          <span class="frame crop"><Image src={editor} alt="The editor showing an arrow, a text note and a blurred value on a captured area" widths={[640, 960, 1280]} sizes={wide} /></span>
+        <Rug caption="An arrow, a rectangle, a text note and a blurred value on a captured area. Fictional sample content.">
+          <span class="frame crop"><Image src={editor} alt="The editor showing an arrow, a rectangle, a text note and a blurred value on a captured area" widths={[960, 1440, 1920, 2560]} sizes={wide} quality={q} /></span>
         </Rug>
       </div>
     </section>
@@ -116,14 +118,14 @@ const premiumFeatures = p.features.filter((f) => !f.free);
       <div class="pair">
         <div>
           <Rug field="teal">
-            <span class="frame crop right"><Image src={exportMenu} alt="The download menu offering PNG, JPEG, WebP and PDF" widths={[640, 960, 1280]} sizes={half} /></span>
+            <span class="frame crop right"><Image src={exportMenu} alt="The download menu offering PNG, JPEG, WebP and PDF" widths={[960, 1440, 1920, 2560]} sizes={half} quality={q} /></span>
           </Rug>
           <h3>Four formats, saved on your computer</h3>
           <p class="small">Copy the edited PNG to the clipboard, or download PNG, JPEG, WebP or PDF. Files go to a Screenshot Capture Studio folder in Downloads, or a folder you choose.</p>
         </div>
         <div>
           <Rug>
-            <span class="frame crop"><Image src={history} alt="Capture history listing two saved captures with their modes and dates" widths={[640, 1000]} sizes={half} /></span>
+            <span class="frame crop"><Image src={history} alt="Capture history listing two saved captures with their modes and dates" widths={[960, 1440, 2200]} sizes={half} quality={q} /></span>
           </Rug>
           <h3>History that stays on this device</h3>
           <p class="small">Reopen a capture with its edits, rename it, pin it or delete it. History keeps up to 100 items or 250 MB. There is no account and no sync.</p>

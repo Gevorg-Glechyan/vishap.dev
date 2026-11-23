@@ -32,7 +32,7 @@ export const features = [
   { name: 'Visible-area, selected-area, and full-page capture', detail: 'Capture page content in the current Chrome tab.', free: true },
   { name: 'Editing and local export', detail: 'Arrows, text, shapes, crop, blur, PNG clipboard, and PNG/JPEG/WebP/PDF downloads.', free: true },
   { name: 'Offline History', detail: 'Reopen, rename, pin, and delete recent captures with saved edits.', free: true },
-  { name: 'Configurable capture shortcuts', detail: 'Assign your own shortcuts in Chrome. No key combination is assigned by default.', free: true },
+  { name: 'Configurable capture shortcuts', detail: 'Chrome suggests Alt+Shift+V, A and F, and may leave one unassigned if it clashes. Change them in Chrome’s shortcut settings.', free: true },
   { name: 'HTML element capture', detail: 'Select a same-document element or visible scrollable container. Long elements in scrolling feeds are captured in full.', free: false },
   { name: 'Bulk tab capture', detail: 'Capture from selected tabs, up to 30 per job, with optional site access for web capture.', free: false },
   { name: 'Custom filename patterns', detail: 'Reuse a filename pattern for repeat work.', free: false },
